@@ -3,6 +3,8 @@
 <head>
    <title>JUANZO MADLIB</title>
    <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <h1>8 Parts of Speech Mad Libs</h1>
@@ -48,5 +50,24 @@
   <h2>See your mad lib result here:</h2>
   <p id="output"></p>
   <script src="script.js"></script>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDWm7CFaAQ6mS32fOk1ITe09l1URRW1DH8",
+    authDomain: "madlibs-2a935.firebaseapp.com",
+    projectId: "madlibs-2a935",
+    storageBucket: "madlibs-2a935.appspot.com",
+    messagingSenderId: "130267669017",
+    appId: "1:130267669017:web:5db8e9365603966eaf8088"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 </body>
 </html>
