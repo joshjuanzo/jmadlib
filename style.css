@@ -1,0 +1,119 @@
+h1, h2 {
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+h3{
+  text-align: left;
+}
+
+.noun { color: blue; }
+.adjective { color: green; }
+.interjection { color: orange; }
+.pronoun { color: fuchsia; }
+.conjunction { color: red; }
+.verb { color: purple; }
+.adverb { color: brown; }
+.preposition { color: indigo; }
+
+.custom-text1 {
+font-family: 'Monaco', monospace; 
+font-weight: bold;
+color: blue;
+font-size: 15px; 
+}
+.custom-text2 {
+font-family: 'Monaco', monospace; 
+font-weight: bold;
+color: green;
+font-size: 15px; 
+}
+.custom-text3 {
+font-family: 'Monaco', monospace; 
+font-weight: bold;
+color: orange;
+font-size: 15px; 
+}
+.custom-text4 {
+font-family: 'Monaco', monospace; 
+font-weight: bold;
+color: fuchsia;
+font-size: 15px; 
+}
+.custom-text5 {
+font-family: 'Monaco', monospace; 
+font-weight: bold;
+color: red;
+font-size: 15px; 
+}
+.custom-text6 {
+font-family: 'Monaco', monospace; 
+font-weight: bold;
+color: purple;
+font-size: 15px; 
+}
+.custom-text7 {
+font-family: 'Monaco', monospace; 
+font-weight: bold;
+color:brown;
+font-size: 15px; 
+}
+.custom-text8{
+font-family: 'Monaco', monospace; 
+font-weight: bold;
+color: indigo;
+font-size: 15px; 
+}
+
+form {
+  width: fit-content;
+  border: 20px solid black;
+  padding: 20px; 
+  margin: 20px;
+  background-color: white;
+  text-align: right;
+  float: left;
+}
+
+body	{	
+  padding: 0;
+  border: 0;
+  background: #DFDFC8;
+  text-align: center;
+}	
+
+input {
+  width: 15em;
+  margin-left: 1em;
+  margin-bottom: .5em;
+}
+
+#button, #reset {
+  width: 7em;
+  background-color: silver;
+  margin-top: 10px; 
+}
+
+#button, #reset { 
+  margin-left: auto; 
+}
+
+#output { 
+ text-align: center;
+ font-size: 40px;
+}
+
+p {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align:left;
+}
+.script-box {
+  width: fit-content;
+  border: 20px solid black;
+  padding: 20px; 
+  margin: 20px;
+  background-color: white;
+  text-align: right;
+  float: left;
+}
