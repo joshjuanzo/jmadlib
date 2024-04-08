@@ -1,4 +1,5 @@
 function printMadLib() {
+  console.log("printMadLib() called");
   var noun_person = document.getElementById('noun_person').value;
   var noun_place = document.getElementById('noun_place').value;
   var adjective = document.getElementById('adjective').value;
@@ -11,5 +12,25 @@ function printMadLib() {
   var adverb = document.getElementById('adverb').value;
 
   document.getElementById('output').innerHTML = "The realm of <span class='noun'>" + noun_place + "</span> was a happy place until the evil knight, Sir <span class='adjective'>" + adjective + "</span> <span class='noun'>" + noun_things_plural + "</span>, stole the king's prized horse. '<span class='interjection'>" + interjection + "</span>! That's <span class='pronoun'>" + pronoun + "</span>,' yelled the king as the evil knight fled. The king gathered all of his townspeople and announced, 'Someone stole my horse and I know I won't feel better <span class='conjunction'>" + conjunction + "</span> horses <span class='verb'>" + verb + "</span> <span class='adverb'>" + adverb + "</span>. Who dares to fight this knight?' The crowd was silent. Then a young child named <span class='noun'>" + noun_person + "</span> stepped forward and said, 'I will!'. The child left before dusk, and in the morning, everyone was surprised because the child returned safely while riding the king's prized horse. 'The child did it,' the town cheered. There was much rejoicing <span class='preposition'>" + preposition + "</span> the horses. The end."; 
+var output = document.getElementById("output").innerHTML;
+console.log("story: " + output);
 
-}
+  var outputData = {
+    timestamp: Date.now(),
+    story: output,
+    noun_person: noun_person,
+    noun_place: noun_place,
+    adjective: adjective,
+    noun_things_plural: noun_things_plural,
+    interjection: interjection,
+    preposition: preposition,
+    conjunction: conjunction,
+    pronoun: pronoun,
+    verb: verb,
+    adverb: adverb,
+};
+
+var outputJSON = JSON.stringify(outputData)
+return outputJSON;
+  }
+  
