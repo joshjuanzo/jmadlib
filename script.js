@@ -53,5 +53,6 @@ console.log("story: " + output);
 
 var outputJSON = JSON.stringify(outputData)
 console.log("outputJSON: "+ outputJSON);
+return outputData;
   }
   
