@@ -11,6 +11,14 @@ const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 console.log("firebase setup complete!");
 
+function saveMadlib(){
+  console.log("saveMadlib() called");
+
+var outputData = createMadlib();
+db.collection("madlibs").doc(outputData.outputName).set(outputData);
+alert(outputData.outputName + " saved to database!");
+}
+
 function printMadLib() {
   console.log("printMadLib() called");
   var noun_person = document.getElementById('noun_person').value;
