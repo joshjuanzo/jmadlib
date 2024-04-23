@@ -44,6 +44,6 @@ console.log("story: " + output);
 };
 
 var outputJSON = JSON.stringify(outputData)
-return outputJSON;
+console.log("outputJSON: "+ outputJSON);
   }
   
