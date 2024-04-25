@@ -3,59 +3,57 @@
 <head>
    <title>JUANZO MADLIB</title>
    <link rel="stylesheet" href="style.css">
-  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+   <script <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
+   <script src="script.js"></script>
 </head>
 <body>
   <h1>8 Parts of Speech Mad Libs</h1>
   <h2>This mad lib is designed to help you learn the 8 parts of speech.</h2>
   <div class="script-box">
-  <h3>Descriptions:</h3>
+    <h3>Descriptions:</h3>
     <p><strong><span class="custom-text1">Noun</span></strong> is a person, place, or thing.</p> 
     <p><strong><span class="custom-text4">Pronoun</span>:</strong> replace a noun in the sentence to make them shorter and simpler to read. Words like 'I', 'him', and 'yours' are all pronouns. For this mad lib, Possessive Pronouns work the best. They are pronouns that show who owns an object.</p>
     <p><strong><span class="custom-text2">Adjectives</span>:</strong> describe a noun.</p>
     <p><strong><span class="custom-text8">Preposition</span>:</strong> link a noun (or pronoun) to other words in a sentence. For this mad lib, avoid the following prepositions because they do not work well in this sentence: among, but, except, of.</p>
     <p><strong><span class="custom-text3">Interjections</span>:</strong> insert emotion into a sentence. Usually, they are a single word with an exclamation mark after them. Think about someone yelling, 'Yoinks! The goblins are coming.'</p>
-
     <p><strong><span class="custom-text5">Conjunctions</span>:</strong> link words or phrases together. 'I will swim today and tomorrow.' For this mad lib, Subordinating Conjunctions work the best. They are linking words that introduce a whole new related phrase.</p>
     <p><strong><span class="custom-text6">Verbs</span></strong> are action words. When we talk about them, we usually say the word 'to' before them. 'To run', 'To fish', 'To jump'.</p>
     <p><strong><span class="custom-text7">Adverb</span></strong> describe the action. They also usually end in <b>ly</b> like <b>quickly</b>.</p><br><br>
-      <p><strong>Fill out the boxes below to create your own mad lib</strong></p> 
-    </div>
-    <form>
-      <label for="noun_person">Noun(person):</label>
-      <input type="text" name="noun_person" id="noun_person"><br><br>
-      <label for="noun_place">Noun(place):</label>
-      <input type="text" name="noun_place" id="noun_place"><br><br>
-      <label for="adjective">Adjective:</label>
-      <input type="text" name="adjective" id="adjective"><br><br>
-      <label for="noun_things_plural">Noun(things, plural):</label>
-      <input type="text" name="noun_things_plural" id="noun_things_plural"><br><br>
-      <label for="interjection">Interjection:</label>
-      <input type="text" name="interjection" id="interjection"> <br><br>
-      <label for="preposition">Preposition:</label>
-      <input type="text" name="preposition" id="preposition"> <br><br>  
-      <label for="conjunction"> Conjunction:</label>
-      <input type="text" name="conjunction" id="conjunction"> <br><br>
-      <label for="pronoun">Pronoun:</label>
-      <input type="text" name="pronoun" id="pronoun"> <br><br>
-      <label for="verb"> Verb: </label>
-      <input type="text" name="verb" id="verb"> <br><br>  
-      <label for="adverb">Adverb: </label>
-      <input type="text" name="adverb" id="adverb"> <br><br>
-      <label for="storyName">name your story: </label>
-      <input type="text" id="storyName" /> <br><br>
+    <p><strong>Fill out the boxes below to create your own mad lib</strong></p> 
+  </div>
+  <form>
+    <label for="noun_person">Noun(person):</label>
+    <input type="text" name="noun_person" id="noun_person"><br><br>
+    <label for="noun_place">Noun(place):</label>
+    <input type="text" name="noun_place" id="noun_place"><br><br>
+    <label for="adjective">Adjective:</label>
+    <input type="text" name="adjective" id="adjective"><br><br>
+    <label for="noun_things_plural">Noun(things, plural):</label>
+    <input type="text" name="noun_things_plural" id="noun_things_plural"><br><br>
+    <label for="interjection">Interjection:</label>
+    <input type="text" name="interjection" id="interjection"> <br><br>
+    <label for="preposition">Preposition:</label>
+    <input type="text" name="preposition" id="preposition"> <br><br>  
+    <label for="conjunction">Conjunction:</label>
+    <input type="text" name="conjunction" id="conjunction"> <br><br>
+    <label for="pronoun">Pronoun:</label>
+    <input type="text" name="pronoun" id="pronoun"> <br><br>
+    <label for="verb">Verb:</label>
+    <input type="text" name="verb" id="verb"> <br><br>  
+    <label for="adverb">Adverb:</label>
+    <input type="text" name="adverb" id="adverb"> <br><br>
+    <label for="storyName">Name your story:</label>
+    <input type="text" id="storyName" /> <br><br>
       
-      <button id="createButton" onclick="createMadLib()">create a Madlib story</button><br><br>
-      <button id="saveButton" onclick="saveMadLib()">save your Madlib story</button><br><br>
-      <button id="retrieveButton" onclick="retrieveMadLib()">find your existing Madlib story</button><br><br>
-       <button id="editButton" onclick="editMadLib()">edit your existing Madlib story</button><br><br>
-       <button id="deleteButton" onclick="deleteMadLib()">delete an existing Madlib story</button><br><br>
-      
-    </form>
+    <button type="button" id="createButton" onclick="createMadLib()">Create a Madlib story</button><br><br>
+    <button type="button" id="saveButton" onclick="saveMadLib()">Save your Madlib story</button><br><br>
+    <button type="button" id="retrieveButton" onclick="retrieveMadLib()">Find your existing Madlib story</button><br><br>
+    <button type="button" id="editButton" onclick="editMadLib()">Edit your existing Madlib story</button><br><br>
+    <button type="button" id="deleteButton" onclick="deleteMadLib()">Delete an existing Madlib story</button><br><br>
+  </form>
   <br><br>
   <h2>See your mad lib result here:</h2>
   <p id="story"></p>
-  <script src="script.js"></script>
 </body>
 </html>
