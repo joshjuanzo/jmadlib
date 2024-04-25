@@ -43,26 +43,19 @@
       <input type="text" name="verb" id="verb"> <br><br>  
       <label for="adverb">Adverb: </label>
       <input type="text" name="adverb" id="adverb"> <br><br>
-      <button type="saveButton" onclick="saveMadLib()">save your Madlib 
- story</button>
-      <input type="reset" name="reset" id="reset">
+      <label for="storyName">name your story: </label>
+      <input type="text" id="storyName" /> <br><br>
+      
+      <button id="createButton" onclick="createMadLib()">create a Madlib story</button><br><br>
+      <button id="saveButton" onclick="saveMadLib()">save your Madlib story</button><br><br>
+      <button id="retrieveButton" onclick="retrieveMadLib()">find your existing Madlib story</button><br><br>
+       <button id="editButton" onclick="editMadLib()">edit your existing Madlib story</button><br><br>
+       <button id="deleteButton" onclick="deleteMadLib()">delete an existing Madlib story</button><br><br>
+      
     </form>
   <br><br>
   <h2>See your mad lib result here:</h2>
-  <p id="output"></p>
-   
-  const firebaseConfig = {
-    apiKey: "AIzaSyDWm7CFaAQ6mS32fOk1ITe09l1URRW1DH8",
-    authDomain: "madlibs-2a935.firebaseapp.com",
-    projectId: "madlibs-2a935",
-    storageBucket: "madlibs-2a935.appspot.com",
-    messagingSenderId: "130267669017",
-    appId: "1:130267669017:web:5db8e9365603966eaf8088"
-  };
-  const app = initializeApp(firebaseConfig);
-  vardb = getFirestore(app);
-  console.log("firebase setup complete!");
-  </script>
+  <p id="story"></p>
   <script src="script.js"></script>
 </body>
 </html>
