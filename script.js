@@ -26,10 +26,9 @@
 
     var storyName = document.getElementById("storyName").value;
 
-document.getElementById("story").innerHTML = "The realm of <span class='noun'>" + noun_place + "</span> was a happy place until the evil knight, Sir <span class='adjective'>" + adjective + "</span> <span class='noun'>" + noun_things_plural + "</span>, stole the king's prized horse. '<span class='interjection'>" + interjection + "</span>! That's <span class='pronoun'>" + pronoun + "</span>,' yelled the king as the evil knight fled. The king gathered all of his townspeople and announced, 'Someone stole my horse and I know I won't feel better <span class='conjunction'>" + conjunction + "</span> horses <span class='verb'>" + verb + "</span> <span class='adverb'>" + adverb + "</span>. Who dares to fight this knight?' The crowd was silent. Then a young child named <span class='noun'>" + noun_person + "</span> stepped forward and said, 'I will!'. The child left before dusk, and in the morning, everyone was surprised because the child returned safely while riding the king's prized horse. 'The child did it,' the town cheered. There was much rejoicing <span class='preposition'>" + preposition + "</span> the horses. The end." + storyName;
+    var story = "The realm of <span class='noun'>" + noun_place + "</span> was a happy place until the evil knight, Sir <span class='adjective'>" + adjective + "</span> <span class='noun'>" + noun_things_plural + "</span>, stole the king's prized horse. '<span class='interjection'>" + interjection + "</span>! That's <span class='pronoun'>" + pronoun + "</span>,' yelled the king as the evil knight fled. The king gathered all of his townspeople and announced, 'Someone stole my horse and I know I won't feel better <span class='conjunction'>" + conjunction + "</span> horses <span class='verb'>" + verb + "</span> <span class='adverb'>" + adverb + "</span>. Who dares to fight this knight?' The crowd was silent. Then a young child named <span class='noun'>" + noun_person + "</span> stepped forward and said, 'I will!'. The child left before dusk, and in the morning, everyone was surprised because the child returned safely while riding the king's prized horse. 'The child did it,' the town cheered. There was much rejoicing <span class='preposition'>" + preposition + "</span> the horses. The end." + storyName;
 
-var story = document.getElementById("story").innerHTML 
-console.log("story: " + story);
+    console.log("story: " + story);
 
     var storyData = {
       timestamp: Date.now(),
@@ -59,11 +58,11 @@ console.log("story: " + story);
     var storyData = createMadLib();
     db.collection("madlibs").doc(storyData.storyName).set(storyData)
       .then(() => {
-        alert(storyData.storyName + " saved to database!");
+        alert(storyData.storyName + " saved!");
       })
       .catch((error) => {
-        console.error("Error saving document: ", error);
-        alert("Failed to save madlib!");
+        console.error("Error saving madlib:", error);
+        alert("Error saving madlib");
       });
   }
 
@@ -71,12 +70,34 @@ console.log("story: " + story);
     console.log("retrieveMadLib() called");
 
     var storyName = prompt("Enter the name of the story you want to look up:");
+    db.collection("madlibs")
+      .doc(storyName)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          console.log("Document data:", doc.data());
+          var storyData = doc.data();
+          document.getElementById("story").innerHTML = storyData.story;
+        } else {
+          console.log("No such document!");
+          document.getElementById("story").innerHTML = "Story not found!";
+        }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
+        document.getElementById("story").innerHTML = "Error retrieving story!";
+      });
+  }
+
+  function editMadLib() {
+    console.log("editMadLib() called");
+
+    var storyName = prompt("Enter the name of the story you want to edit:");
     db.collection("madlibs").doc(storyName).get()
       .then((doc) => {
         if (doc.exists) {
           console.log("Document data:", doc.data());
           var storyData = doc.data();
-
           document.getElementById("noun_person").value = storyData.noun_person;
           document.getElementById("noun_place").value = storyData.noun_place;
           document.getElementById("adjective").value = storyData.adjective;
@@ -87,9 +108,7 @@ console.log("story: " + story);
           document.getElementById("pronoun").value = storyData.pronoun;
           document.getElementById("verb").value = storyData.verb;
           document.getElementById("adverb").value = storyData.adverb;
-
           document.getElementById("outputData").value = storyData.storyName;
-
           document.getElementById("story").innerHTML = storyData.story;
         } else {
           console.log("No such document!");
