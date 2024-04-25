@@ -33,7 +33,7 @@ console.log("story: " + story);
 
     var storyData = {
       timestamp: Date.now(),
-      story: storyHTML,
+      story: story,
       noun_person: noun_person,
       noun_place: noun_place,
       adjective: adjective,
@@ -53,8 +53,8 @@ console.log("story: " + story);
     return storyData;
   }
 
-  function saveMadlib() {
-    console.log("saveMadlib() called");
+  function saveMadLib() {
+    console.log("saveMadLib() called");
 
     var storyData = createMadLib();
     db.collection("madlibs").doc(storyData.storyName).set(storyData)
@@ -67,8 +67,8 @@ console.log("story: " + story);
       });
   }
 
-  function retrieveMadlib() {
-    console.log("retrieveMadlib() called");
+  function retrieveMadLib() {
+    console.log("retrieveMadLib() called");
 
     var storyName = prompt("Enter the name of the story you want to look up:");
     db.collection("madlibs").doc(storyName).get()
