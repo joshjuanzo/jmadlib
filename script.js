@@ -1,10 +1,10 @@
   const firebaseConfig = {
-    apiKey: "AIzaSyDWm7CFaAQ6mS32fOk1ITe09l1URRW1DH8",
-    authDomain: "madlibs-2a935.firebaseapp.com",
-    projectId: "madlibs-2a935",
-    storageBucket: "madlibs-2a935.appspot.com",
-    messagingSenderId: "130267669017",
-    appId: "1:130267669017:web:5db8e9365603966eaf8088"
+    apiKey: "AIzaSyAnWFDClviIDhiikJ9HFOsOUWAWCnQ9NhA",
+    authDomain: "madlibs-42561.firebaseapp.com",
+    projectId: "madlibs-42561",
+    storageBucket: "madlibs-42561.appspot.com",
+    messagingSenderId: "396455509428",
+    appId: "1:396455509428:web:52b3071e484aae1d4086e1"
   };
 
   const app = firebase.initializeApp(firebaseConfig);
